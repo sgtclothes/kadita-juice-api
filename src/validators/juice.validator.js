@@ -24,6 +24,15 @@ const juiceSchema = Joi.object({
     active: Joi.boolean().required().messages({
         "any.only": "Active must be either true or false",
     }),
+
+    price: Joi.number().integer().min(0).required().messages({
+        "number.base": "Price must be a number",
+        "number.min": "Price cannot be negative",
+    }),
+
+    category: Joi.string().required().valid("Jus Buah", "Jus Sayur", "Jus Campuran").messages({
+        "any.only": "Category must be either Jus Buah, Jus Sayur, Jus Campuran",
+    }),
 });
 
 module.exports = {
