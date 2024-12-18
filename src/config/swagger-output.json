@@ -83,17 +83,6 @@
         "summary": "Get All Juices",
         "description": "Get All Juices",
         "operationId": "getAllJuices",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Get All Juices": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": ""
@@ -133,6 +122,10 @@
                     "type": "string",
                     "example": "Ini deskripsi Jus Matic"
                   },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
                   "name": {
                     "type": "string",
                     "example": "Jus Matic"
@@ -162,7 +155,7 @@
         ]
       }
     },
-    "/api/juices/30001": {
+    "/api/juices/27": {
       "put": {
         "summary": "Update Juice",
         "description": "Update Juice",
@@ -173,6 +166,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "active": {
+                    "type": "string",
+                    "example": "false"
+                  },
                   "description": {
                     "type": "string",
                     "example": "Ini deskripsi Jus Matic"

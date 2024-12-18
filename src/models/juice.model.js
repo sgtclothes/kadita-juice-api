@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
                 min: 0,
             },
         },
-        type: {
+        category: {
             type: DataTypes.ENUM("Jus Buah", "Jus Sayur", "Jus Campuran"),
             allowNull: false,
         },
@@ -34,6 +34,23 @@ module.exports = (sequelize) => {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: true,
+        },
+        price: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+        },
+        isBestSeller: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
+        createdAt: {
+            allowNull: false,
+            type: DataTypes.DATE,
+        },
+        updatedAt: {
+            allowNull: false,
+            type: DataTypes.DATE,
         },
     });
 

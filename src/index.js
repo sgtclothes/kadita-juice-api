@@ -4,6 +4,7 @@ const cors = require('cors');
 const { sequelize } = require('./models');
 const juiceRoutes = require('./routes/juice.routes');
 const authRoutes = require('./routes/auth.routes');
+const adminRoutes = require('./routes/admin.routes');
 const errorHandler = require('./middleware/error-handler');
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./config/swagger-output.json");
@@ -20,6 +21,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/juices', juiceRoutes);
+app.use('/api/admin', adminRoutes);
 
 app.use(errorHandler);
 
