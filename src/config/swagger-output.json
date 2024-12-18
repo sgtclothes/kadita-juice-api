@@ -1,0 +1,219 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Kadita Juice",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login User",
+        "description": "Login User",
+        "operationId": "loginUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "example": "admin123"
+                  },
+                  "username": {
+                    "type": "string",
+                    "example": "admin"
+                  }
+                }
+              },
+              "examples": {
+                "Login User": {
+                  "value": {
+                    "password": "admin123",
+                    "username": "admin"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "summary": "Logout User",
+        "description": "Logout User",
+        "operationId": "logoutUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Logout User": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/juices": {
+      "get": {
+        "summary": "Get All Juices",
+        "description": "Get All Juices",
+        "operationId": "getAllJuices",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get All Juices": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/juices/2": {
+      "get": {
+        "summary": "Get Juice By ID",
+        "description": "Get Juice By ID",
+        "operationId": "getJuiceById",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/juices/": {
+      "post": {
+        "summary": "Create Juice",
+        "description": "Create Juice",
+        "operationId": "createJuice",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "Ini deskripsi Jus Matic"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Jus Matic"
+                  },
+                  "quantity": {
+                    "type": "string",
+                    "example": "100"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "Jus Buah"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/api/juices/30001": {
+      "put": {
+        "summary": "Update Juice",
+        "description": "Update Juice",
+        "operationId": "updateJuice",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "Ini deskripsi Jus Matic"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Jus Matic 2"
+                  },
+                  "quantity": {
+                    "type": "string",
+                    "example": "100"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "Jus Buah"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": []
+}
