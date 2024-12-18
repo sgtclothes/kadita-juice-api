@@ -43,6 +43,7 @@ class JuiceController {
       const newJuice = await juiceService.create(juiceData);
       return ResponseUtil.success(res, newJuice, 'Juice created successfully', 201);
     } catch (error) {
+      console.error(error.message);
       return ResponseUtil.error(res, 'Error creating juice');
     }
   }

@@ -118,6 +118,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "active": {
+                    "type": "string",
+                    "example": "true"
+                  },
                   "description": {
                     "type": "string",
                     "example": "Ini deskripsi Jus Matic"
