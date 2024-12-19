@@ -10,12 +10,10 @@ class AdminController {
                 juiceService.count(),
                 Juice.sequelize.query("SELECT COUNT(DISTINCT category) AS count FROM Juices"),
             ]);
-
             const result = {
                 juiceCount,
                 categoryCount: categoryCount[0][0].count,
             };
-
             return ResponseUtil.success(res, result, "Dashboard data retrieved successfully");
         } catch (error) {
             console.log(error.message);

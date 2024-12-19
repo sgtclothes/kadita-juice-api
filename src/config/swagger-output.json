@@ -93,21 +93,7 @@
             "bearerAuth": []
           }
         ]
-      }
-    },
-    "/api/juices/2": {
-      "get": {
-        "summary": "Get Juice By ID",
-        "description": "Get Juice By ID",
-        "operationId": "getJuiceById",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/api/juices/": {
+      },
       "post": {
         "summary": "Create Juice",
         "description": "Create Juice",
@@ -122,6 +108,10 @@
                     "type": "string",
                     "example": "true"
                   },
+                  "category": {
+                    "type": "string",
+                    "example": "Jus Buah"
+                  },
                   "description": {
                     "type": "string",
                     "example": "Ini deskripsi Jus Matic"
@@ -133,6 +123,10 @@
                   "name": {
                     "type": "string",
                     "example": "Jus Matic"
+                  },
+                  "price": {
+                    "type": "string",
+                    "example": "15000"
                   },
                   "quantity": {
                     "type": "string",
@@ -157,6 +151,18 @@
             "bearerAuth": []
           }
         ]
+      }
+    },
+    "/api/juices/2": {
+      "get": {
+        "summary": "Get Juice By ID",
+        "description": "Get Juice By ID",
+        "operationId": "getJuiceById",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
       }
     },
     "/api/juices/27": {

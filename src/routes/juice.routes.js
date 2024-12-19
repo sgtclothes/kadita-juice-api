@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const juiceController = require('../controllers/juice.controller');
 const authMiddleware = require('../middleware/auth.middleware');
-const upload = require('../middleware/upload');
 const validate = require('../middleware/validate.middleware');
 const { juiceSchema } = require('../validators/juice.validator');
+const { uploadCloudinary } = require('../config/multer.config');
+const upload = require('../utils/multer.util');
 
 router.get('/', juiceController.getAllJuices);
 router.get('/:id', juiceController.getJuiceById);
